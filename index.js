@@ -7,13 +7,14 @@ const rl = require('readline').createInterface({
   output: process.stdout,
   prompt: '\nENTER LIST> '
 });
-const ItemFreq = require('./itemfreq'); //uses OLOO pattern
+const ItemFreq = require('./itemfreq'); //using OLOO pattern
 const tagFreq = Object.create(ItemFreq);
 const dir = './data';
 
 function processFiles(){
   fs.readdir(dir, function(err, files) {
     if (err) throw err;
+    console.log('\n • Processing files...');
     let remaining = files.length;
     files.map((name) => {
       return path.join(dir, name);
@@ -23,7 +24,7 @@ function processFiles(){
         try {
           tagFreq.countMatches(JSON.parse(data), 'tags');
         } catch (e) {
-          console.error(`\n • Error parsing "${path}". Skipping this file...`);
+          console.error(`\n • Error parsing "${path}". Skipping...`);
         }
         if (--remaining === 0){
           printResults();
@@ -39,6 +40,7 @@ function printResults(){
   sortedKeys.forEach((key)=>{
     maxLen = Math.max(maxLen, key.length);
   });
+  console.log('\n • Results:');
   console.log('\n   ```');
   sortedKeys.forEach((key)=>{
     const pad = 2 + maxLen - key.length;
