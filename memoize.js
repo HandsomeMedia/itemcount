@@ -38,7 +38,7 @@ module.exports = fn => {
     if(!cache[stringifiedArgs]){
       cache[stringifiedArgs] = fn(...args);
     }else{
-      console.log('\n - Using cached results...');
+      console.log('\n - Using cached results.');
     }
     return cache[stringifiedArgs];
   };
