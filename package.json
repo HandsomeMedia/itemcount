@@ -1,7 +1,7 @@
 {
-  "name": "ItemFreq",
+  "name": "ItemCount",
   "version": "1.0.0",
-  "description": "get number of item occurrences",
+  "description": "count number of item occurrences",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
