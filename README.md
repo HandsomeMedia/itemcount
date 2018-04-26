@@ -1,9 +1,4 @@
-To Run:
-open root directory in console and type 'node index.js' or 'npm start'
-
-===========
-
-Project Requirements:
+- open root directory in console and type 'node index.js' or 'npm start'
 - allow user to supply a CLI argument containing a comma-separated list
   - if no argument is given, load `tags.txt`
 - count how many times each list item appears within the objects in `data/*.json` (_note:_ objects can be nested).
